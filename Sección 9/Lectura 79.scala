@@ -8,7 +8,7 @@ import org.apache.spark.sql.expressions.Window
 
 import org.apache.spark.sql.functions.{desc, row_number, rank, dense_rank}
 
-val windowSpec = Window.partitionBy("departamento").orderBy(desc("puntos"))
+val windowSpec = Window.partitionBy("departamento").orderBy(desc("evaluacion"))
 
 df.withColumn("row_number", row_number().over(windowSpec)).show(false)
 
