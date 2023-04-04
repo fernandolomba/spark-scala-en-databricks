@@ -22,8 +22,8 @@ val windowSpecAgg = Window.partitionBy("departamento")
 
 import org.apache.spark.sql.functions.{col, min, max, avg}
 
-df.withColumn("min", min(col("puntos")).over(windowSpecAgg))
-  .withColumn("max", max(col("puntos")).over(windowSpecAgg))
-  .withColumn("avg", avg(col("puntos")).over(windowSpecAgg))
+df.withColumn("min", min(col("edad")).over(windowSpecAgg))
+  .withColumn("max", max(col("edad")).over(windowSpecAgg))
+  .withColumn("avg", avg(col("edad")).over(windowSpecAgg))
   .withColumn("row_number", row_number().over(windowSpec))
 .show
